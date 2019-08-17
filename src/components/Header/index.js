@@ -15,9 +15,7 @@ const Header = () => (
       <Image src={dragons} alt="Logo" />
     </div>
 
-    <div>
-      <h1>My Dragons</h1>
-    </div>
+    <div />
 
     <div>
       {isAuthenticated() ? (

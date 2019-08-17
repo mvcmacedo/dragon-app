@@ -4,15 +4,15 @@ export const Container = Styled.div`
   display: flex;
   justify-content: space-between;
   color: #fff;
-  padding: 1%;
+  padding: 0.5%;
   background-color: #004d00;
   width: 100%;
   min-height: 50px;
 `;
 
 export const Image = Styled.img`
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
 `;
 
 export const Button = Styled.button`

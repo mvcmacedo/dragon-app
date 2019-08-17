@@ -2,8 +2,7 @@ import Styled from 'styled-components';
 
 export const Container = Styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 `;
 
 export const FormContainer = Styled.div`
@@ -11,12 +10,11 @@ export const FormContainer = Styled.div`
   flex-wrap: wrap;
   width: 90%;
   max-width: 500px;
-  margin: 4%;
+  margin: 5%;
   padding: 1%;
   background: #eee;
   border-radius: 15px;
-  border: 2px solid #004d00;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 `;
 
 export const FormField = Styled.div`
