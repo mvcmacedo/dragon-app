@@ -5,7 +5,7 @@ export const Container = Styled.div`
   align-items: center;
   flex-wrap: wrap;
   width: 20%;
-  margin: 2%;
+  margin: 3%;
   background: #f2f2f2;
   border-radius: 15px;
   transition: transform 0.5s;
@@ -44,11 +44,6 @@ export const Container = Styled.div`
       margin: 1.5%;
     }
 
-    span {
-      font-weight: bold;
-      color: #333333;
-    }
-
     button {
       width: 45px;
       height: 45px;
@@ -76,6 +71,15 @@ export const Container = Styled.div`
         background: #33cc33;
       }
 
+      .back {
+        background: #33cc33;
+        width: 65px;
+        height: 45px;
+        font-size: 15px;
+        font-weight: bold;
+        color: #fff;
+      }
+
       .delete {
         background: #cc0000;
       }
@@ -90,6 +94,12 @@ export const Header = Styled.div`
 export const Body = Styled.div`
   background: #d3d3d3;
   border-radius: 15px;
+
+  span {
+      font-weight: bold;
+      color: #333333;
+      font-size: 16px;
+    }
 `;
 
 export const DragonImg = Styled.img`
