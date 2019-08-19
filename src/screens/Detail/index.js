@@ -1,5 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import React, { useState, useEffect } from 'react';
+import { Redirect } from 'react-router';
 import { ToastContainer, toast } from 'react-toastify';
 import Loader from 'react-loader-spinner';
 
@@ -9,7 +10,8 @@ import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import Dragon from '../../components/Dragon';
 
 import api from '../../services/api';
-import logo from '../../assets/dragon_19.svg';
+
+import logos from '../../helpers/dragons';
 
 import { Container, LoaderContainer } from './styles';
 
@@ -17,6 +19,8 @@ const Detail = ({ match }) => {
   const [dragon, setDragon] = useState({});
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
+
+  const logo = logos[Math.floor(Math.random() * logos.length)]; // logo dragão aleatória
 
   useEffect(() => {
     async function findDragon() {
@@ -39,12 +43,11 @@ const Detail = ({ match }) => {
   return (
     <Container>
       <ToastContainer />
+      {error && <Redirect to="/" />}
       {loading ? (
         <LoaderContainer>
           <Loader type="Oval" color="#29a329" />
         </LoaderContainer>
-      ) : error ? (
-        <span>Dragão não encontrado</span>
       ) : (
         <Dragon data={{ ...dragon, logo, isDetail: true }} />
       )}

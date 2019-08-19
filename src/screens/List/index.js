@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 
+import Loader from 'react-loader-spinner';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+
 import {
   sortBy,
   compose,
@@ -18,6 +21,7 @@ import { Container } from './styles';
 
 const List = () => {
   const [dragons, setDragons] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const fetchDragons = async () => {
     try {
@@ -28,6 +32,8 @@ const List = () => {
       setDragons(sortData(data));
     } catch (err) {
       toast.error('Occreu um erro ao buscar dragões.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -48,17 +54,19 @@ const List = () => {
   return (
     <Container>
       <ToastContainer />
-      {dragons.map((dragon) => (
-        <Dragon
-          key={dragon.id}
-          data={{
-            ...dragon,
-            logo: logos[Math.floor(Math.random() * logos.length)], // seleciona logo aleatória
-            isDetail: false,
-          }}
-          handleDelete={handleDelete}
-        />
-      ))}
+      { loading
+        ? <Loader type="Oval" color="#29a329" />
+        : dragons.map((dragon) => (
+          <Dragon
+            key={dragon.id}
+            data={{
+              ...dragon,
+              logo: logos[Math.floor(Math.random() * logos.length)], // seleciona logo aleatória
+              isDetail: false,
+            }}
+            handleDelete={handleDelete}
+          />
+        ))}
     </Container>
   );
 };

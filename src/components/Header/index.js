@@ -6,8 +6,8 @@ import {
 
 import { isAuthenticated, logout, getUser } from '../../services/auth';
 
-import logoutLogo from '../../assets/logout.svg';
-import dragons from '../../assets/twodragons.svg';
+import logoutLogo from '../../assets/white_logout.svg';
+import dragons from '../../assets/white_twodragons.svg';
 
 const Header = () => (
   <Container>

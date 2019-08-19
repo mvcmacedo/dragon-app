@@ -5,7 +5,7 @@ export const Container = Styled.div`
   justify-content: space-between;
   color: #fff;
   padding: 0 10px;
-  background-color: #004d00;
+  background-color: #444;
   width: 100%;
   min-height: 50px;
 
@@ -20,8 +20,8 @@ export const Image = Styled.img`
 `;
 
 export const Button = Styled.button`
-  background: #004d00;
-  border: #004d00;
+  background: #444;
+  border: #444;
   cursor: pointer;
 `;
 
@@ -29,5 +29,6 @@ export const LoginArea = Styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 25px;
+  font-size: 20px;
+  color: #eee;
 `;

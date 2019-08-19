@@ -27,6 +27,10 @@ export const Container = Styled.div`
     width: 45%;
   }
 
+  @media(max-width: 400px) {
+    width: 50%;
+  }
+
   div {
     display: flex;
     flex-wrap: wrap;

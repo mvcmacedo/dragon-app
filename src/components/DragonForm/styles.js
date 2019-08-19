@@ -18,7 +18,7 @@ export const Container = Styled.div`
   
     h1 {
       color: #444;
-      margin-bottom: 5%;
+      margin-bottom: 2%;
     }
 
     span {
