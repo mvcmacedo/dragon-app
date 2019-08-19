@@ -44,6 +44,13 @@ const DragonForm = ({ id }) => {
     setLoading(true);
 
     try {
+      if (name === '' || type === '') {
+        toast.warn('Nome ou tipo do dragão não informado.');
+
+        setLoading(false);
+        return;
+      }
+
       if (id) { // edit dragon
         await api.put(`/dragon/${id}`, { name, type });
       } else { // create dragon

@@ -28,7 +28,7 @@ export const Container = Styled.div`
   }
 
   @media(max-width: 400px) {
-    width: 50%;
+    width: 70%;
   }
 
   div {

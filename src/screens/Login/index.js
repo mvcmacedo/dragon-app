@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+
 import {
   Container, FormContainer, FormField, FormInput, FormButton,
 } from './styles';
@@ -10,7 +14,11 @@ const Login = () => {
   const [username, setUsername] = useState('');
 
   const handleLogin = () => {
-    if (username === '') return;
+    if (username === '') {
+      toast.warn('Digite um usuário.');
+
+      return;
+    }
 
     login(username);
   };
@@ -23,6 +31,7 @@ const Login = () => {
 
   return (
     <Container>
+      <ToastContainer />
       <FormContainer>
         <FormField>
           <FormInput

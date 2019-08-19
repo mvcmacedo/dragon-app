@@ -10,7 +10,7 @@ export const Container = Styled.div`
   min-height: 50px;
 
   * {
-    margin: 0 3%;
+    margin: 0 5%;
   }
 `;
 
