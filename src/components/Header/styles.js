@@ -7,10 +7,10 @@ export const Container = Styled.div`
   padding: 0 10px;
   background-color: #444;
   width: 100%;
-  min-height: 50px;
+  min-height: 60px;
 
   * {
-    margin: 0 5%;
+    padding: 0 5%;
   }
 `;
 
