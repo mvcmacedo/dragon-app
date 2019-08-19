@@ -5,6 +5,8 @@ import Routes from './routes';
 import Header from './components/Header';
 import AddButton from './components/AddButton';
 
+import { isAuthenticated } from './services/auth';
+
 import GlobalStyle from './styles';
 
 function App() {
@@ -12,7 +14,7 @@ function App() {
     <BrowserRouter>
       <GlobalStyle />
       <Header />
-      <AddButton />
+      { isAuthenticated() && <AddButton /> }
       <Routes />
     </BrowserRouter>
   );

@@ -10,7 +10,15 @@ const Login = () => {
   const [username, setUsername] = useState('');
 
   const handleLogin = () => {
+    if (username === '') return;
+
     login(username);
+  };
+
+  const keyPressed = (event) => {
+    if (event.key === 'Enter') {
+      handleLogin(username);
+    }
   };
 
   return (
@@ -22,6 +30,7 @@ const Login = () => {
             placeholder="Digite seu usuário"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            onKeyPress={keyPressed}
           />
         </FormField>
         <FormField>
