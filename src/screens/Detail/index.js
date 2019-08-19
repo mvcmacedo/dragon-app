@@ -22,7 +22,7 @@ const Detail = ({ match }) => {
     async function findDragon() {
       try {
         const { data } = await api.get(`/dragon/${match.params.id}`);
-
+        
         setDragon(data);
       } catch (err) {
         setError(true);

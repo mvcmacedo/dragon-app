@@ -5,6 +5,8 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 import List from './screens/List';
 import Login from './screens/Login';
+import Edit from './screens/Edit';
+import New from './screens/New';
 import Detail from './screens/Detail';
 
 import { isAuthenticated } from './services/auth';
@@ -34,7 +36,9 @@ const LoginRoute = ({ component: Component, ...rest }) => (
 const Routes = () => (
   <Switch>
     <PrivateRoute exact path="/" component={List} />
+    <PrivateRoute exact path="/criar" component={New} />
     <PrivateRoute exact path="/detalhe/:id" component={Detail} />
+    <PrivateRoute exact path="/editar/:id" component={Edit} />
     <LoginRoute path="/login" component={Login} />
   </Switch>
 );

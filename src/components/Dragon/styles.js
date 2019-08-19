@@ -5,7 +5,7 @@ export const Container = Styled.div`
   align-items: center;
   flex-wrap: wrap;
   width: 20%;
-  margin: 3%;
+  margin: 2%;
   background: #f2f2f2;
   border-radius: 15px;
   transition: transform 0.5s;

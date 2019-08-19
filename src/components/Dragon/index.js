@@ -11,7 +11,8 @@ import Edit from '../../assets/white_edit1.png';
 import Eye from '../../assets/white_eye1.png';
 import Delete from '../../assets/white_delete1.png';
 
-const Dragon = ({ data }) => (
+
+const Dragon = ({ data, handleDelete }) => (
   <Container>
     <Header>
       <DragonImg src={data.logo} alt="logo" />
@@ -50,9 +51,11 @@ const Dragon = ({ data }) => (
             </Link>
           </button>
           <button type="button" className="edit">
-            <img src={Edit} alt="editar" />
+            <Link to={`/editar/${data.id}`}>
+              <img src={Edit} alt="editar" />
+            </Link>
           </button>
-          <button type="button" className="delete">
+          <button type="button" className="delete" onClick={() => handleDelete(data.id)}>
             <img src={Delete} alt="deletar" />
           </button>
         </>
@@ -70,6 +73,7 @@ Dragon.propTypes = {
     isDetail: PropTypes.bool,
     logo: PropTypes.node.isRequired,
   }).isRequired,
+  handleDelete: PropTypes.func.isRequired,
 };
 
 export default Dragon;
