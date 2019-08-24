@@ -69,11 +69,18 @@ Dragon.propTypes = {
     id: PropTypes.string,
     name: PropTypes.string.isRequired,
     type: PropTypes.string,
-    createdAt: PropTypes.string,
+    createdAt: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.string,
+    ]),
     isDetail: PropTypes.bool,
     logo: PropTypes.node.isRequired,
   }).isRequired,
-  handleDelete: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func,
+};
+
+Dragon.defaultProps = {
+  handleDelete: undefined,
 };
 
 export default Dragon;

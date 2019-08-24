@@ -21,6 +21,9 @@ const DragonForm = ({ id }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setName('');
+    setType('');
+
     async function findDragon() {
       try {
         const { data } = await api.get(`/dragon/${id}`);
@@ -33,12 +36,12 @@ const DragonForm = ({ id }) => {
       }
     }
 
-    if (id) {
-      findDragon();
-    } else {
+    if (!id) {
       setLoading(false);
+    } else {
+      findDragon();
     }
-  }, []);
+  }, [id]);
 
   const handleSave = async () => {
     setLoading(true);
@@ -51,10 +54,10 @@ const DragonForm = ({ id }) => {
         return;
       }
 
-      if (id) { // edit dragon
-        await api.put(`/dragon/${id}`, { name, type });
-      } else { // create dragon
+      if (!id) { // create dragon
         await api.post('/dragon', { name, type });
+      } else { // edit dragon
+        await api.put(`/dragon/${id}`, { name, type });
       }
 
       setToHome(true);
@@ -91,7 +94,7 @@ const DragonForm = ({ id }) => {
                 type="text"
                 placeholder="Digite o nome"
                 value={name}
-                onChange={(e) => setName(e.target.value)}
+                onChange={e => setName(e.target.value)}
               />
             </div>
 
@@ -104,7 +107,7 @@ const DragonForm = ({ id }) => {
                 type="text"
                 placeholder="Digite o tipo"
                 value={type}
-                onChange={(e) => setType(e.target.value)}
+                onChange={e => setType(e.target.value)}
               />
             </div>
             <Buttons>
@@ -119,6 +122,10 @@ const DragonForm = ({ id }) => {
 
 DragonForm.propTypes = {
   id: PropTypes.string,
+};
+
+DragonForm.defaultProps = {
+  id: undefined,
 };
 
 export default DragonForm;

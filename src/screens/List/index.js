@@ -56,7 +56,7 @@ const List = () => {
       <ToastContainer />
       { loading
         ? <Loader type="Oval" color="#29a329" />
-        : dragons.map((dragon) => (
+        : dragons.map(dragon => (
           <Dragon
             key={dragon.id}
             data={{
