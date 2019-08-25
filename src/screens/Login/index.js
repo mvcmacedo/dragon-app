@@ -38,7 +38,7 @@ const Login = () => {
             type="text"
             placeholder="Digite seu usuário"
             value={username}
-            onChange={e => setUsername(e.target.value)}
+            onChange={(e) => setUsername(e.target.value)}
             onKeyPress={keyPressed}
           />
         </FormField>

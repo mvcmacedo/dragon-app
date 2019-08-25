@@ -12,10 +12,8 @@ import dragons from '../../assets/white_twodragons.svg';
 const Header = () => (
   <Container>
     <div>
-      <Image src={dragons} alt="Logo" />
+      <Image src={dragons} alt="left-logo" />
     </div>
-
-    <div />
 
     <div>
       {isAuthenticated() ? (
@@ -26,7 +24,7 @@ const Header = () => (
           </LoginArea>
         </Button>
       ) : (
-        <Image src={dragons} alt="Logo" />
+        <Image src={dragons} alt="right-logo" />
       )}
     </div>
   </Container>

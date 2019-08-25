@@ -94,7 +94,7 @@ const DragonForm = ({ id }) => {
                 type="text"
                 placeholder="Digite o nome"
                 value={name}
-                onChange={e => setName(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
 
@@ -107,7 +107,7 @@ const DragonForm = ({ id }) => {
                 type="text"
                 placeholder="Digite o tipo"
                 value={type}
-                onChange={e => setType(e.target.value)}
+                onChange={(e) => setType(e.target.value)}
               />
             </div>
             <Buttons>
